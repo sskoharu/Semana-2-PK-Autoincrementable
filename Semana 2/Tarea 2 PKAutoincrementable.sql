@@ -1,11 +1,6 @@
--- Creación de la tabla
 
-CREATE TABLE personas (
-    nombre VARCHAR(255) NOT NULL,
-    apellido VARCHAR(255) NOT NULL
-);
-
--- Creación de la PK autoincrementable en la misma tabla
-
-ALTER TABLE personas
-ADD COLUMN id_estudiante INT AUTO_INCREMENT PRIMARY KEY FIRST;
+-- Eliminar la PK de codigo_pedido
+ALTER TABLE detalle_pedido DROP PRIMARY KEY;
+-- Agregar la columna que usará la PK
+ALTER TABLE detalle_pedido
+ADD nuevo_pedido INT AUTO_INCREMENT PRIMARY KEY;
